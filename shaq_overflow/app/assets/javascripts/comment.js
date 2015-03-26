@@ -11,6 +11,7 @@ $(document).ready(function() {
       url: "/questions/" + type_id + "/comments",
       success: function (response) {
         $('.comment-list').prepend("<p>" + response.content + "</p>");
+        $('#comment_content').val("");
       }
     });
   })
