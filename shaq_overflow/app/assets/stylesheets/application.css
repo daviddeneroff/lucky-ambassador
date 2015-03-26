@@ -58,6 +58,7 @@
   position: fixed;
   font-family: 'Josefin Sans', sans-serif;
   width: 100%;
+  z-index: 5;
 }
 
 #nav-bar a:hover {
@@ -238,4 +239,35 @@ form input[type="submit"]:hover {
   text-align: center;
   margin: auto;
   margin-bottom: 10px;
+}
+
+.user-page-questions {
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.shaq-face {
+  border-radius: 50%;
+  border: 2px solid #50c1e9
+
+}
+
+.cmon-ride {
+  position:relative;
+    text-align:center;
+}
+
+.photo-submission {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 2px solid #50c1e9
+}
+
+.big-arrow {
+  width: 200px;
+  padding-bottom: 100px;
 }

@@ -1,0 +1,14 @@
+<div class="overlay">
+  <div class="content-wrapper">
+    <div class="form-content">
+      <a class="close"><img class="close" src="/assets/small_shaq.png"></a>
+      <%= form_for :answer, url: {action: "create"}, html: {class: "our-new-answer"} do |f| %>
+      <%= f.label :content %>
+      <%= f.text_area(:content, size: '30x10') %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

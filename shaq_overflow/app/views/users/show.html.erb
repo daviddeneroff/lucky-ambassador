@@ -1,1 +1,14 @@
 <h1 class="welcome-user">Welcome, <%= @user.username %></h1>
+
+<div class="user-page-questions">
+<% if @user.questions.count > 0 %>
+  <h3>Here are all of your questions:</h3>
+  <% @user.questions.each do |question| %>
+    Votes: | <%= question.votes.count %>
+    Answers: | <%= question.answers.count %>
+      <p><%= link_to("#{question.title}", question_path(question)) %></p>
+  <% end %>
+<% else %>
+  <p>Post a question and you can monitor it's activity here!</p>
+  <% end %>
+</div>
