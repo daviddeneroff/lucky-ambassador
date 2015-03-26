@@ -15,7 +15,7 @@ $(document).ready(function() {
     }
   );
 
- $("a.up-vote-question").click(function(event) {
+ $(".up-vote-question").click(function(event) {
       event.preventDefault();
       var $target = $(event.target);
       $.ajax({
