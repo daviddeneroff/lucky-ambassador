@@ -1,10 +1,22 @@
 <h3 class="centered">Will Shaq Fit in the Shack??</h3>
+
 <h3 class="question-title centered"><%= @question.title %></h3>
+
+
 <div class="cmon-ride">
   <img class="shaq-face" src="/assets/shaq_funny_face.jpg">
   <img class="big-arrow" src="/assets/arrow.png">
   <img class="photo-submission" src="<%= @question.url %>">
 </div>
+
+<% if current_user %>
+  <%= render partial: "vote_up" %>
+<p class="centered middle-votes">Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%= @question.q_net %></span></p>
+  <%= render partial: "vote_down" %>
+<% else %>
+  <%= @question.q_net %>
+<% end %>
+
 <p class="add-answer"><a href="/questions/<%= @question.id %>/answers/new">Got an answer??</a></p>
 
 Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%= @question.q_net %></span>
@@ -13,7 +25,6 @@ Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%=
 
 <%= render partial: "vote_down" %>
 <br>
-  <%= link_to("Add new Answer", new_question_answer_path(@question)) %><br>
 
   <%= render partial: "form"%>
   <div class="comment-list">
