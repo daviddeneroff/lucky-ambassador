@@ -1,13 +1,1 @@
-<div class="error_message">
-  <p> <%= @errors %> </p>
-</div>
-
-<%= form_for :question, url: {action: "create"}, html: {class: "new_question"} do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
-
-  <%= f.label :url %>:
-  <%= f.text_field :url %><br />
-
-  <%= f.submit %>
-<% end %>
+<%= render 'new_question' %>
