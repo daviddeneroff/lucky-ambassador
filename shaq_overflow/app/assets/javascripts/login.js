@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  $('#login-btn').on("click", function (e) {
+  $('.login-btn').on("click", function (e) {
     e.preventDefault();
+
     var url = $(this).attr('href');
     $.ajax({
       type: 'get',
       url: url,
       success: function (response) {
-        console.log(response);
         $('#main').after(response);
       }
     });
@@ -19,7 +19,6 @@ $(document).ready(function () {
       type: 'get',
       url: url,
       success: function (response) {
-        console.log(response);
         $('#main').after(response);
       }
     });
