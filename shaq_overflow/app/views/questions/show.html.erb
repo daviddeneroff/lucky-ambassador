@@ -8,11 +8,13 @@ Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%=
   <%= link_to("Add new Answer", new_question_answer_path(@question)) %><br>
 
   <%= render partial: "form"%>
-  <% @question.comments.each do |comment| %>
-    <%= comment.content %><br>
-  <% end %>
+  <div class="comment-list">
+    <% @question.comments.each do |comment| %>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
 <% end %>
-<!-- if best, show div -->
+
 <% if @question.best %>
 <div class="the-best">
   <h3>Best Answer</h3>
