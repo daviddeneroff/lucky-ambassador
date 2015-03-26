@@ -1,8 +1,1 @@
-<div id="new-answer-form">
-  <h1>Add Answer</h1>
-  <%= form_for [@question, @answer] do |f| %>
-  Content: <%= f.text_field :content %><br />
-
-  <%= f.submit "Create" %>
-<% end %>
-</div>
+<%= render 'new_answer' %>
