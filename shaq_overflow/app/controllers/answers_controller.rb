@@ -11,6 +11,7 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @question = Question.find(params[:question_id])
+    render :new, layout: false
   end
 
   def create
