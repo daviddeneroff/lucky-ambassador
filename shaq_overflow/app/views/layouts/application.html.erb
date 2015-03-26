@@ -13,16 +13,17 @@
 <div class="clearfix black" id="nav-bar">
     <div class="sm-col">
       <img src="http://static.giantbomb.com/uploads/original/1/13641/2182953-shaq.jpg"/>
-      <%= link_to 'Shaq Overflow', root_path, id: "title", class: "button py2 button-transparent" %>
+      <%= link_to 'Shaq Overflow', questions_path, id: "title", class: "button py2 button-transparent" %>
     </div>
     <div class="sm-col-right">
       <div id="shaq-height"></div>
       <%= link_to 'Questions', questions_path, id: "questions-btn", class: "button py2 button-transparent" %>
       <% if current_user %>
-      <%= link_to 'Add Question', new_question_path, class: "button py2 button-transparent" %>
+      <%= link_to 'Profile', "/users/#{current_user.id}", class: "button py2 button-transparent" %>
+      <%= link_to 'Add Question', new_question_path, class: "button py2 button-transparent add-question" %>
       <%= link_to 'Logout', logout_path, id: "logout-btn", class: "button py2 button-transparent" %>
       <% else %>
-      <%= link_to 'Login', login_path, id: "login-btn", class: "button py2 button-transparent" %>
+      <%= link_to 'Login', login_path, class: "button py2 button-transparent login-btn" %>
       <%= link_to 'Signup', new_user_path, id: "signup-btn", class: "button py2 button-transparent" %>
       <% end %>
     </div>
