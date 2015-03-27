@@ -37,7 +37,6 @@ Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%=
 <% if @question.best %>
 <div class="the-best">
   <h3>Best Answer</h3>
-<%= link_to("Up Vote", "/") %>
   <p><%= @question.best.content %></p>
 </div>
 <% end %>
@@ -47,7 +46,10 @@ Votes: <span class="make-question-up-votes" id="question-<%= @question.id%>"><%=
 
 <%= render partial: "answers/vote_up", locals: {answer: answer} %>
 
-<%= render partial: "answers/vote_down", locals: {answer: answer} %><br>
+<%= render partial: "answers/vote_down", locals: {answer: answer} %>
+<% if current_user.id == @question.user_id %>
+  <%= render partial: "answers/edit", locals: {answer: answer} %>
+<% end %>
       Answer Comment form <%= render partial: "answers/form", locals: {answer: answer}%>
   <% answer.comments.each do |comment| %>
     <br>Votes: <span class="make-comment-up-votes" id="comment-<%= comment.id%>"><%= comment.c_net %></span>

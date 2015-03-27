@@ -5,7 +5,8 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :comments, as: :commentable
   validates :user_id, :url, :title, presence: true
-
+  validates :url, presence: true
+  validates :url, format: { with: URI.regexp }, if: Proc.new { |a| a.url.present? }
 
   def reset_all_answers
     answers.update_all(accepted: false)

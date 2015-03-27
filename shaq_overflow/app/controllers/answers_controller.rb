@@ -16,10 +16,7 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-      #***************************
-      #CHANGE THIS TO CURRENT USER
-      #***************************
-    @answer.user = User.find(1)
+    @answer.user = User.find(current_user.id)
     @answer.question = Question.find(params[:question_id])
     if @answer.save
       redirect_to question_path(@answer.question)
@@ -34,12 +31,10 @@ class AnswersController < ApplicationController
   end
 
   def update
-    @answer = Answer.find params[:id]
-    if @answer.update_attributes(answer_params)
-      redirect_to question_path(@answer.question)
-    else
-      render :edit
-    end
+    @answer = Answer.find params[:answer][:answer_id]
+    @answer.update_attributes(accepted: true)
+    # redirect_to question_path(@answer.question)
+    redirect_to '/'
   end
 
   def destroy
