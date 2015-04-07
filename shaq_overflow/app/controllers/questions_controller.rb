@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
 
   def new
     if is_authenticated?
+      flash[:notice] = ""
       @question = Question.new
       render :new, layout: false
     end
@@ -29,9 +30,9 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to '/questions'
     else
-     redirect_to "/"
-   end
-
+      flash[:notice] = "Invalid schtuff"
+      render :action => :new
+    end
   end
 
   private
