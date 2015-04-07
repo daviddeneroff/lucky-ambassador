@@ -292,3 +292,7 @@ form input[type="submit"]:hover {
 .middle-votes {
   padding-top: 11px;
 }
+
+.errors {
+  color: red;
+}
